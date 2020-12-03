@@ -67,7 +67,7 @@
 // 	min-height: 100vh;
 // 	height: 100%;
 // 	padding-top: 130px;
-	
+
 // 	overflow: auto;
 // }
 
@@ -75,15 +75,30 @@
 
 //<ШРИФТЫ>
 
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap");
+
 //<Подключаем шрифты>
+
+@font-face {
+  font-family: "Uni Sans";
+  src: url("../fonts/ UniSansHeavyCAPS.eot");
+  src: local("../fonts/ Uni Sans Heavy CAPS"), local("UniSansHeavyCAPS"),
+    url("../fonts/ UniSansHeavyCAPS.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/ UniSansHeavyCAPS.woff") format("woff"),
+    url("../fonts/ UniSansHeavyCAPS.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
 
 //</Подключаем шрифты>
 
 //<Шрифт по умолчанию>
-$fontfamily: "";
+$fontfamily: "Roboto";
 //</Шрифт по умолчанию>
 
-//</ШРИФТЫ>
+//</ШРИФТЫ>../fonts/
 
 //<ПЕРЕМЕННЫЕ>
 $minwidth: 320px;
@@ -92,8 +107,9 @@ $md1: $mw + 12;
 $md2: 992.98;
 $md3: 767.98;
 $md4: 479.98;
+$us: "Uni Sans";
+$pl: "Play";
 //</ПЕРЕМЕННЫЕ>
-
 //<ОБНУЛЕНИЕ, ОБЩИЕ ПАРАМЕТРЫ>
 * {
   padding: 0px;
@@ -192,9 +208,9 @@ h6 {
 .wrapper {
   width: 100%;
   min-height: 100%;
-	overflow: hidden;
-	
-	position: relative;
+  overflow: hidden;
+
+  position: relative;
   &.loaded {
   }
 }
@@ -214,13 +230,6 @@ h6 {
 @import "footer.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 
-//<ОСНОВНОЙ БЛОК>
-
-//
-
-//</ОСНОВНОЙ БЛОК>
-
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
-// @import "forms.scss";
-// @import "ui.scss";
+@import "common-class.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
