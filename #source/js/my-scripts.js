@@ -1,13 +1,19 @@
 $(function () {
   // Burger btn ===============================================
 
-  const burgerBtn = $("#burgerMenu");
+  const burgerBtnFirst = $(".menu__icon"),
+    burgerBtnSecond = $(".menu-intro__icon");
 
-  burgerBtn.on("click", function (event) {
+  burgerBtnFirst.on("click", function (event) {
     event.preventDefault();
 
-    $(".menu-header__body").toggleClass("show");
-    $(".header").toggleClass("active");
+    $(".menu__body").toggleClass("active");
+    $(this).toggleClass("active");
+  });
+
+  burgerBtnSecond.on("click", function (event) {
+    event.preventDefault();
+
     $(this).toggleClass("active");
   });
 
@@ -179,11 +185,11 @@ $(function () {
       },
       700
     );
-	});
-	
-	//  Spy scroll section  ===============================================
+  });
 
-	scrollSpy();
+  //  Spy scroll section  ===============================================
+
+  scrollSpy();
 
   $(window).on("scroll", function () {
     scrollSpy();

@@ -83,11 +83,11 @@
 
 @font-face {
   font-family: "Uni Sans";
-  src: url("../fonts/ UniSansHeavyCAPS.eot");
+  src: url("../fonts/UniSansHeavyCAPS.eot");
   src: local("../fonts/ Uni Sans Heavy CAPS"), local("UniSansHeavyCAPS"),
     url("../fonts/ UniSansHeavyCAPS.eot?#iefix") format("embedded-opentype"),
-    url("../fonts/ UniSansHeavyCAPS.woff") format("woff"),
-    url("../fonts/ UniSansHeavyCAPS.ttf") format("truetype");
+    url("../../fonts/UniSansHeavyCAPS.woff") format("woff"),
+    url("../fonts/UniSansHeavyCAPS.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
@@ -227,9 +227,14 @@ h6 {
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 @import "header.scss";
+@import "intro.scss";
+@import "brands.scss";
+@import "blog.scss";
+@import "info-menu.scss";
 @import "footer.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
 @import "common-class.scss";
+@import "sliders.scss";
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>
