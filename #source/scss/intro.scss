@@ -1,7 +1,7 @@
 .intro {
   flex: 1 1 auto;
-	padding-top: 194px;
-	margin-bottom: 30px;
+  padding-top: 194px;
+  margin-bottom: 30px;
 
   @media (max-width: $md2 + px) {
     padding-top: 170px;
@@ -219,14 +219,29 @@
 }
 
 .content-intro {
-  &__products {
-  }
-
   &__main-slider {
     margin-bottom: 60px;
+    @media (max-width: $md2 + px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__category {
+    margin-bottom: 30px;
+    @media (max-width: $md2 + px) {
+      margin-bottom: 20px;
+    }
   }
   &__top {
     position: relative;
+  }
+
+  &__breadcrumbs {
+    margin-top: 35px;
+  }
+
+  &__catalog {
+    margin-top: 10px;
   }
 
   &__main {
@@ -501,11 +516,11 @@
 .products-intro {
   &__header {
     display: flex;
-		margin-bottom: 31px;
-		
-		@media (max-width: $md3 + px){
-			flex-wrap: wrap;
-		}
+    margin-bottom: 31px;
+
+    @media (max-width: $md3 + px) {
+      flex-wrap: wrap;
+    }
   }
 
   &__title {
@@ -520,19 +535,22 @@
 
     &:hover {
       text-decoration: underline;
-		}
-		
-		@media (max-width: 640px){
-			margin-bottom: 15px;
-			flex: 1 1 100%;
-		}
+    }
+
+    @media (max-width: 640px) {
+      margin-bottom: 15px;
+      flex: 1 1 100%;
+    }
+
+    @media (max-width: $md4 + px) {
+      margin-bottom: 25px;
+    }
   }
 
   &__control {
     display: flex;
     justify-content: space-between;
     align-items: center;
-		flex: 0 1 161px;
-		
+    flex: 0 1 161px;
   }
 }

@@ -226,12 +226,18 @@ h6 {
 //</ОСНОВНАЯ СЕТКА>
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
+
+// All
 @import "header.scss";
 @import "intro.scss";
 @import "brands.scss";
 @import "blog.scss";
 @import "info-menu.scss";
 @import "footer.scss";
+
+// Page Category
+@import "catalog.scss";
+
 //</ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ UI СТИЛЕЙ, ФОРМ И ГОТОВЫХ КЛАССОВ>

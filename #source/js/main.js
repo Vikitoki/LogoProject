@@ -237,6 +237,7 @@ $(function () {
   }
 
   // Brands slider ================================================
+
   if (document.querySelector(".slider-brands__container")) {
     let myBrandsSlider = new Swiper(".slider-brands__container", {
       loop: true,
@@ -260,8 +261,8 @@ $(function () {
       breakpoints: {
         0: {
           slidesPerView: 1,
-				},
-				480: {
+        },
+        480: {
           slidesPerView: 2,
         },
         600: {
@@ -273,12 +274,103 @@ $(function () {
         1170: {
           slidesPerView: 5,
         },
-			},
-			
-			autoplay: {
-				// Пауза между прокруткой
-				delay: 2000,
-			},
+      },
+
+      autoplay: {
+        // Пауза между прокруткой
+        delay: 2000,
+      },
     });
   }
+
+  // Prise-filter ===================================================================
+
+  const priceFilter = document.querySelector(".price-filter__slider");
+
+  noUiSlider.create(priceFilter, {
+    start: [0, 100000],
+    connect: true,
+    tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
+    range: {
+      min: 0,
+      max: 300000,
+    },
+  });
+
+  const priceStart = document.getElementById("price-start"),
+    priceEnd = document.getElementById("price-end");
+
+  priceStart.addEventListener("input", setPrices);
+  priceEnd.addEventListener("input", setPrices);
+
+  function setPrices() {
+    let startPriceValue, endPriceValue;
+
+    if (priceStart.value != "") {
+      startPriceValue = priceStart.value;
+    }
+
+    if (priceEnd.value != "") {
+      endPriceValue = priceEnd.value;
+    }
+
+    priceFilter.noUiSlider.set([startPriceValue, endPriceValue]);
+  }
+
+  // Checkbox-filter ===================================================================
+
+  const filterTitles = document.querySelectorAll(
+      ".section-filter__title-spoiler"
+    ),
+    filterBodies = document.querySelectorAll(".section-filter__body_spoiler");
+
+  filterTitles.forEach((title, index) => {
+    title.addEventListener("click", function () {
+      this.classList.toggle("active");
+      filterBodies[index].classList.toggle("section-filter__body_spoiler");
+    });
+  });
+
+  const filterTitle = document.querySelector(".filter__title");
+
+  filterTitle.addEventListener("click", function (event) {
+    document.querySelector(".filter__body").classList.toggle("active");
+  });
+
+  // Catalog ===================================================================
+
+  document.querySelectorAll(".select-catalog").forEach((catalog, index) => {
+    catalog.addEventListener("click", function () {
+      this.classList.toggle("active");
+      console.log(document.querySelectorAll(".select-catalog__body"));
+      document
+        .querySelectorAll(".select-catalog__body")
+        [index].classList.toggle("active");
+    });
+
+    catalog.querySelectorAll(".select-catalog__option").forEach((option) => {
+      option.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        let content = "";
+        content = option.textContent;
+        catalog.querySelector(
+          ".select-catalog__default"
+        ).textContent = content;
+      });
+		});
+		
+  });
+
+  document.querySelectorAll(".view-catalog__item").forEach((item, index) => {
+    item.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      document
+        .querySelectorAll(".view-catalog__item")
+        .forEach((item) => item.classList.remove("active"));
+
+      this.classList.add("active");
+    });
+  });
 });
