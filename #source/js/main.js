@@ -354,12 +354,9 @@ $(function () {
 
         let content = "";
         content = option.textContent;
-        catalog.querySelector(
-          ".select-catalog__default"
-        ).textContent = content;
+        catalog.querySelector(".select-catalog__default").textContent = content;
       });
-		});
-		
+    });
   });
 
   document.querySelectorAll(".view-catalog__item").forEach((item, index) => {
@@ -374,3 +371,127 @@ $(function () {
     });
   });
 });
+
+// Product ===================================================================
+
+// Slider
+
+if (document.querySelector(".images-product")) {
+  let mySubImageSlider = new Swiper(".images-product__sub-container", {
+    speed: 800,
+    observer: true,
+    observeParents: true,
+    slidesPerGroup: 1,
+    slidesPerView: 4,
+
+    slideToClickedSlide: false,
+  });
+
+  let myMainImageSlider = new Swiper(".images-product__main-container", {
+    speed: 800,
+    observer: true,
+    observeParents: true,
+    slidesPerGroup: 1,
+    slidesPerView: 1,
+
+    slideToClickedSlide: false,
+
+    thumbs: {
+      // Свайпер с мениатюрами
+      // и его настройки
+      swiper: mySubImageSlider,
+    },
+  });
+
+  // Action
+
+  const quantityArrowPrev = document.querySelector(".quantity__arrow_prev"),
+    quantityArrowNext = document.querySelector(".quantity__arrow_next"),
+    quantityInput = document.querySelector(".quantity__input input");
+
+  quantityArrowPrev.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    let inputValue = quantityInput.value;
+
+    console.log(inputValue);
+    if (+inputValue <= 0) {
+      return;
+    }
+
+    quantityInput.value = --inputValue;
+  });
+
+  quantityArrowNext.addEventListener("click", function (event) {
+    event.preventDefault();
+
+    let inputValue = quantityInput.value;
+
+    console.log(inputValue);
+    if (+inputValue < 0) {
+      return;
+    }
+
+    quantityInput.value = ++inputValue;
+  });
+
+  // Tabs Product =======================================================
+
+  const tabsLinks = document.querySelectorAll(".tabs-product__nav-item"),
+    tabsBlocks = document.querySelectorAll(".block-product-tabs");
+
+  tabsLinks.forEach((link, index) => {
+    link.addEventListener("click", function (event) {
+      event.preventDefault();
+
+      if (link.classList.contains("active")) {
+        return;
+      }
+
+      tabsBlocks.forEach((block) => block.classList.remove("active"));
+      tabsLinks.forEach((link) => link.classList.remove("active"));
+
+      this.classList.add("active");
+      tabsBlocks[index].classList.add("active");
+    });
+  });
+
+  // Same slider ===========================================================
+
+  if (document.querySelector(".same-product__slider")) {
+    let mySameSlider = new Swiper(".same-product__container", {
+      speed: 800,
+      observer: true,
+      observeParents: true,
+      slidesPerGroup: 1,
+      slidesPerView: 3,
+      loop: true,
+
+      slideToClickedSlide: false,
+
+      // Брейкпоинты
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        582: {
+          slidesPerView: 2,
+        },
+        756: {
+          slidesPerView: 3,
+        },
+      },
+
+      // Автопрокрутка
+
+      autoplay: {
+        // Пауза между прокруткой
+        delay: 1500,
+        // Закончить на последнем слайде
+        stopOnLastSlide: false,
+        // Отключить после ручного переключения
+        disableOnInteraction: true,
+      },
+    });
+  }
+}

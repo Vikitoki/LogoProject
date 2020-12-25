@@ -256,6 +256,9 @@ let myImageSlider = new Swiper('.image-slider', {
 	thumbs: {
 		// Свайпер с мениатюрами
 		// и его настройки
+		// Если хотим подключить через переменную (рекомендуется)
+			swiper: mySubImageSlider,
+		// Через класс
 		swiper: {
 			el: '.image-mini-slider',
 			slidesPerView: 5,
