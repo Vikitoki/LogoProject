@@ -1,52 +1,15 @@
 //@prepros-append dynamicAdapt.js
+//@prepros-append my-scripts.js
+//@prepros-append my-sliders.js
 
-$(function () {
+document.addEventListener("DOMContentLoaded", function () {
   let windowWith = window.innerWidth;
 
   window.addEventListener("resize", function () {
     windowWith = window.innerWidth;
   });
 
-  // Turn img to background ===========================================
-
-  function ibg() {
-    $.each($(".ibg"), function (index, val) {
-      if ($(this).find("img").length > 0) {
-        $(this).css({
-          background:
-            'url("' + $(this).find("img").attr("src") + '") center no-repeat',
-          "background-size": "cover",
-        });
-
-        $(this).find("img").first().css("display", "none");
-      }
-    });
-  }
-
-  ibg();
-
-  // Burger btn ===============================================
-
-  const burgerBtnFirst = $(".menu__icon"),
-    burgerBtnSecond = $(".menu-intro__icon"),
-    introMenuBody = $(".menu-intro__body");
-
-  burgerBtnFirst.on("click", function (event) {
-    event.preventDefault();
-
-    $(".menu__body").toggleClass("active");
-    $(this).toggleClass("active");
-  });
-
-  burgerBtnSecond.on("click", function (event) {
-    event.preventDefault();
-
-    $(this).toggleClass("active");
-    introMenuBody.toggleClass("active");
-  });
-
   // Show submenu cart (PC,MOBILE) ================================================
-
   const menuParentLinks = document.querySelectorAll(
       ".menu-intro__link-parrent"
     ),
@@ -58,6 +21,7 @@ $(function () {
       event.stopPropagation();
     });
   });
+
   if (windowWith < 992.98) {
     menuParentLinks.forEach((link, index) => {
       link.addEventListener("click", function (event) {
@@ -156,165 +120,40 @@ $(function () {
     });
   });
 
-  // Swiper Slider https://swiperjs.com/ ================================================
-
-  // Intro slider ================================================
-
-  // Main part ====================
-
-  // Actions
-
-  if (document.querySelector(".main-intro-content__slider")) {
-    let myIntroSlider = new Swiper(".main-intro-content__slider", {
-      pagination: {
-        el: ".main-intro-content__pagination",
-        // Буллеты
-        type: "bullets",
-        clickable: true,
-      },
-      loop: true,
-      speed: 800,
-      autoHeight: true,
-      observer: true,
-      observeParents: true,
-      slidesPerGroup: 1,
-      // Автопрокрутка
-      autoplay: {
-        // Пауза между прокруткой
-        delay: 5000,
-        // Закончить на последнем слайде
-        stopOnLastSlide: false,
-        // Отключить после ручного переключения
-        disableOnInteraction: false,
-      },
-    });
-
-    // Get background to dots
-    const itemImages = document.querySelectorAll(".item-content-intro__image"),
-      sliderIntroDotts = document.querySelectorAll(
-        ".main-intro-content__pagination .swiper-pagination-bullet"
-      );
-
-    sliderIntroDotts.forEach((item, index) => {
-      let dotBackground = itemImages[index]
-        .querySelector("img")
-        .getAttribute("src");
-      item.style.cssText = `
-			background: url('${dotBackground}') center no-repeat;
-			background-size: cover;
-			`;
-    });
-  }
-
-  // Products part ====================
-
-  // Actions
-
-  if (document.querySelector(".products-intro__slider-container")) {
-    let myProductSlider = new Swiper(".products-intro__slider-container", {
-      loop: true,
-      speed: 800,
-      autoHeight: true,
-      observer: true,
-      observeParents: true,
-      slidesPerGroup: 1,
-
-      grabCursor: false,
-      slideToClickedSlide: false,
-
-      // Стрелки
-      navigation: {
-        nextEl: ".control-intro-products__arrow_next",
-        prevEl: ".control-intro-products__arrow_prev",
-      },
-
-      // Pagination
-      pagination: {
-        el: ".control-intro-products__info",
-        type: "fraction",
-      },
-    });
-  }
-
-  // Brands slider ================================================
-
-  if (document.querySelector(".slider-brands__container")) {
-    let myBrandsSlider = new Swiper(".slider-brands__container", {
-      loop: true,
-      speed: 800,
-      autoHeight: true,
-      observer: true,
-      observeParents: true,
-      slidesPerGroup: 1,
-      slidesPerView: 5,
-
-      grabCursor: false,
-      slideToClickedSlide: false,
-
-      // Стрелки
-      navigation: {
-        nextEl: ".arrow-brands_next",
-        prevEl: ".arrow-brands_prev",
-      },
-
-      // Брейкпоинты
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-        },
-        480: {
-          slidesPerView: 2,
-        },
-        600: {
-          slidesPerView: 3,
-        },
-        992: {
-          slidesPerView: 4,
-        },
-        1170: {
-          slidesPerView: 5,
-        },
-      },
-
-      autoplay: {
-        // Пауза между прокруткой
-        delay: 2000,
-      },
-    });
-  }
-
   // Prise-filter ===================================================================
 
-  const priceFilter = document.querySelector(".price-filter__slider");
+  if (document.querySelector(".price-filter__slider")) {
+    const priceFilter = document.querySelector(".price-filter__slider");
 
-  noUiSlider.create(priceFilter, {
-    start: [0, 100000],
-    connect: true,
-    tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
-    range: {
-      min: 0,
-      max: 300000,
-    },
-  });
+    noUiSlider.create(priceFilter, {
+      start: [0, 100000],
+      connect: true,
+      tooltips: [wNumb({ decimals: 0 }), wNumb({ decimals: 0 })],
+      range: {
+        min: 0,
+        max: 300000,
+      },
+    });
 
-  const priceStart = document.getElementById("price-start"),
-    priceEnd = document.getElementById("price-end");
+    const priceStart = document.getElementById("price-start"),
+      priceEnd = document.getElementById("price-end");
 
-  priceStart.addEventListener("input", setPrices);
-  priceEnd.addEventListener("input", setPrices);
+    priceStart.addEventListener("input", setPrices);
+    priceEnd.addEventListener("input", setPrices);
 
-  function setPrices() {
-    let startPriceValue, endPriceValue;
+    function setPrices() {
+      let startPriceValue, endPriceValue;
 
-    if (priceStart.value != "") {
-      startPriceValue = priceStart.value;
+      if (priceStart.value != "") {
+        startPriceValue = priceStart.value;
+      }
+
+      if (priceEnd.value != "") {
+        endPriceValue = priceEnd.value;
+      }
+
+      priceFilter.noUiSlider.set([startPriceValue, endPriceValue]);
     }
-
-    if (priceEnd.value != "") {
-      endPriceValue = priceEnd.value;
-    }
-
-    priceFilter.noUiSlider.set([startPriceValue, endPriceValue]);
   }
 
   // Checkbox-filter ===================================================================
@@ -331,11 +170,13 @@ $(function () {
     });
   });
 
-  const filterTitle = document.querySelector(".filter__title");
+  if (document.querySelector(".filter__title")) {
+    const filterTitle = document.querySelector(".filter__title");
 
-  filterTitle.addEventListener("click", function (event) {
-    document.querySelector(".filter__body").classList.toggle("active");
-  });
+    filterTitle.addEventListener("click", function (event) {
+      document.querySelector(".filter__body").classList.toggle("active");
+    });
+  }
 
   // Catalog ===================================================================
 
@@ -370,70 +211,40 @@ $(function () {
       this.classList.add("active");
     });
   });
-});
 
-// Product ===================================================================
+  // Quantity ===================================================================
 
-// Slider
+  if (document.querySelector(".quantity__input input")) {
+    const quantityArrowPrev = document.querySelector(".quantity__arrow_prev"),
+      quantityArrowNext = document.querySelector(".quantity__arrow_next"),
+      quantityInput = document.querySelector(".quantity__input input");
 
-if (document.querySelector(".images-product")) {
-  let mySubImageSlider = new Swiper(".images-product__sub-container", {
-    speed: 800,
-    observer: true,
-    observeParents: true,
-    slidesPerGroup: 1,
-    slidesPerView: 4,
+    quantityArrowPrev.addEventListener("click", function (event) {
+      event.preventDefault();
 
-    slideToClickedSlide: false,
-  });
+      let inputValue = quantityInput.value;
 
-  let myMainImageSlider = new Swiper(".images-product__main-container", {
-    speed: 800,
-    observer: true,
-    observeParents: true,
-    slidesPerGroup: 1,
-    slidesPerView: 1,
+      console.log(inputValue);
+      if (+inputValue <= 0) {
+        return;
+      }
 
-    slideToClickedSlide: false,
+      quantityInput.value = --inputValue;
+    });
 
-    thumbs: {
-      // Свайпер с мениатюрами
-      // и его настройки
-      swiper: mySubImageSlider,
-    },
-  });
+    quantityArrowNext.addEventListener("click", function (event) {
+      event.preventDefault();
 
-  // Action
+      let inputValue = quantityInput.value;
 
-  const quantityArrowPrev = document.querySelector(".quantity__arrow_prev"),
-    quantityArrowNext = document.querySelector(".quantity__arrow_next"),
-    quantityInput = document.querySelector(".quantity__input input");
+      console.log(inputValue);
+      if (+inputValue < 0) {
+        return;
+      }
 
-  quantityArrowPrev.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    let inputValue = quantityInput.value;
-
-    console.log(inputValue);
-    if (+inputValue <= 0) {
-      return;
-    }
-
-    quantityInput.value = --inputValue;
-  });
-
-  quantityArrowNext.addEventListener("click", function (event) {
-    event.preventDefault();
-
-    let inputValue = quantityInput.value;
-
-    console.log(inputValue);
-    if (+inputValue < 0) {
-      return;
-    }
-
-    quantityInput.value = ++inputValue;
-  });
+      quantityInput.value = ++inputValue;
+    });
+  }
 
   // Tabs Product =======================================================
 
@@ -456,42 +267,75 @@ if (document.querySelector(".images-product")) {
     });
   });
 
-  // Same slider ===========================================================
+  // Remove order item =======================================================
 
-  if (document.querySelector(".same-product__slider")) {
-    let mySameSlider = new Swiper(".same-product__container", {
-      speed: 800,
-      observer: true,
-      observeParents: true,
-      slidesPerGroup: 1,
-      slidesPerView: 3,
-      loop: true,
+  if (document.querySelector(".item-order__remove")) {
+    const closeOrderBtns = document.querySelectorAll(".item-order__remove");
 
-      slideToClickedSlide: false,
+    let deleteItems = 0;
 
-      // Брейкпоинты
-      breakpoints: {
-        0: {
-          slidesPerView: 1,
-        },
-        582: {
-          slidesPerView: 2,
-        },
-        756: {
-          slidesPerView: 3,
-        },
-      },
+    closeOrderBtns.forEach((btn) => {
+      btn.addEventListener("click", function (event) {
+        event.preventDefault();
 
-      // Автопрокрутка
+        btn.closest(".item-order").remove();
 
-      autoplay: {
-        // Пауза между прокруткой
-        delay: 1500,
-        // Закончить на последнем слайде
-        stopOnLastSlide: false,
-        // Отключить после ручного переключения
-        disableOnInteraction: true,
-      },
+        deleteItems += 1;
+
+        if (deleteItems === closeOrderBtns.length) {
+          console.log(1);
+          document.querySelector(".content-order__items").style.cssText = `
+						padding: 15px 0;
+
+						font-size: 20px;
+						font-weight: 900;
+						color: #333;
+						text-transform: uppercase;
+				
+						text-align: center;
+
+						border: 1px solid #dadada;
+					`;
+
+          document.querySelector(
+            ".content-order__items"
+          ).innerHTML = `<div>Ваша корзина пуста</div>`;
+        }
+      });
     });
   }
-}
+
+  // Select form =======================================================
+
+  const selectTrigerAll = document.querySelectorAll(".select-form__default"),
+    selectFormBodies = document.querySelectorAll(".select-form__body"),
+    selectFormOption = document.querySelectorAll(".select-form__link");
+
+  selectTrigerAll.forEach((trigger, index) => {
+    trigger.addEventListener("click", function (event) {
+      this.classList.toggle("active");
+      selectFormBodies[index].classList.toggle("active");
+    });
+
+    selectFormOption.forEach((option) => {
+      option.addEventListener("click", function (event) {
+        event.preventDefault();
+
+        option.closest(".select-form__body").classList.remove("active");
+        trigger.classList.remove("active");
+
+        trigger.textContent = option.textContent;
+      });
+    });
+  });
+
+  // Item form =======================================================
+
+  const FormMustItems = document.querySelectorAll(
+    ".item-form__label_must span"
+  );
+
+  FormMustItems.forEach((item) => {
+    item.textContent += "*";
+  });
+});

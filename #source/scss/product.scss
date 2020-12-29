@@ -407,6 +407,17 @@
       border-bottom-color: transparent;
     }
 
+    &_form {
+      @media (max-width: $md2 + px) {
+        white-space: nowrap;
+        padding: 20px;
+
+        @media (max-width: $md3 + px) {
+          padding: 15px;
+        }
+      }
+    }
+
     @media (max-width: $md4 + px) {
       padding: 15px;
     }

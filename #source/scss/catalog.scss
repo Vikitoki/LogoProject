@@ -186,7 +186,7 @@
     }
 
     .noUi-handle {
-			margin: 0;
+      margin: 0;
       width: 23px;
       height: 23px;
 
@@ -340,6 +340,7 @@
 .checkbox-filter {
   display: flex;
   align-items: center;
+
   &__input {
     position: absolute;
     top: 0;
@@ -399,6 +400,12 @@
       background-color: transparent;
 
       transition: background-color 0.2s ease;
+    }
+
+    &_form {
+      &::after {
+        top: 7px;
+      }
     }
   }
 }

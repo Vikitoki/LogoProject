@@ -1,0 +1,270 @@
+// Order ============================================
+
+.order {
+  &__title {
+    display: block;
+    margin-bottom: 31px;
+
+    font-family: $us;
+    font-size: 36px;
+    font-weight: 400;
+    color: #dadada;
+		text-transform: uppercase;
+		
+		@media (max-width: $md4 + px){
+			font-size: 30px;
+		}
+  }
+
+  &__content {
+    margin-bottom: 36px;
+  }
+}
+
+.content-order {
+  &__item {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+.item-order {
+  display: flex;
+  align-items: center;
+
+  border: 1px solid #dadada;
+  padding: 20px;
+
+  position: relative;
+  &__remove {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 1;
+
+    display: block;
+    width: 16px;
+    height: 16px;
+
+    transition: transform 0.2s linear;
+
+    &:hover {
+      transform: rotate(-90deg);
+    }
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    flex: 0 1 55%;
+
+    @media (max-width: 686px) {
+      flex: 1 1 100%;
+      min-width: 100%;
+      margin-bottom: 20px;
+		}
+		
+		@media (max-width: $md4 + px){
+			padding-top: 20px;
+		}
+  }
+
+  &__actions {
+    flex: 0 1 45%;
+    display: flex;
+    align-items: center;
+
+    @media (max-width: 686px) {
+      min-width: 100%;
+      flex: 1 1 100%;
+    }
+  }
+
+  &__image {
+    flex: 0 0 110px;
+    display: block;
+    height: 100px;
+
+    @media (max-width: 686px) {
+      flex: 0 0 200px;
+      height: 170px;
+    }
+
+    @media (max-width: $md4 + px) {
+      flex: 0 0 110px;
+      height: 100px;
+    }
+  }
+
+  &__body {
+    flex: 1 1 auto;
+    padding-left: 45px;
+
+    @media (max-width: $md3 + px) {
+      padding-left: 10px;
+    }
+
+    @media (max-width: 686px) {
+      padding-left: 40px;
+      flex: 1 1 100%;
+    }
+  }
+
+  &__name {
+    display: block;
+    margin-bottom: 10px;
+
+    font-size: 14px;
+    font-weight: 300;
+    color: #36949f;
+    line-height: 22px;
+    span {
+      font-weight: 900;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__price {
+    font-size: 24px;
+    font-weight: 900;
+    color: #333333;
+    line-height: 24px;
+    span {
+      font-size: 15px;
+    }
+
+    @media (max-width: $md3 + px) {
+      font-size: 16px;
+    }
+  }
+
+  &__quantity {
+    flex: 0 0 50%;
+    padding: 0 30px;
+    display: flex;
+    justify-content: center;
+
+    @media (max-width: $md3 + px) {
+      padding: 0;
+    }
+
+    @media (max-width: 686px) {
+      flex: 0 1 50%;
+      justify-content: flex-start;
+    }
+  }
+
+  &__total {
+    flex: 0 0 50%;
+    padding-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    @media (max-width: 686px) {
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-end;
+      padding: 0;
+    }
+
+    @media (max-width: $md4 + px) {
+      display: none;
+    }
+  }
+
+  &__label {
+    display: block;
+    margin-bottom: 15px;
+
+    font-size: 16px;
+    font-weight: 300;
+    color: #999999;
+
+    @media (max-width: $md3 + px) {
+      font-size: 14px;
+    }
+
+    @media (max-width: 686px) {
+      margin-bottom: 0;
+      line-height: 24px;
+      margin-right: 15px;
+    }
+  }
+
+  @media (max-width: 686px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+.footer-order {
+  display: flex;
+  align-items: flex-end;
+  flex-direction: column;
+  &__total {
+    display: flex;
+    align-items: center;
+    margin-bottom: 28px;
+  }
+
+  &__label {
+    font-size: 24px;
+    font-weight: 900;
+    color: #333333;
+    text-transform: uppercase;
+  }
+
+  &__price {
+    padding-left: 18px;
+
+    font-size: 36px;
+    font-weight: 900;
+    color: #f68038;
+  }
+}
+
+// Checkout ============================================
+
+.checkout {
+  margin: 28px 0 47px;
+  &__title {
+    margin-bottom: 22px;
+
+    font-family: $us;
+    font-size: 36px;
+    font-weight: 400;
+    color: #dadada;
+		text-transform: uppercase;
+		
+		@media (max-width: $md4 + px){
+			font-size: 30px;
+		}
+  }
+
+  &__content {
+    padding: 37px 46px;
+    @media (max-width: $md3 + px) {
+      padding: 20px;
+    }
+  }
+}
+
+.content-checkout {
+  background-color: #fafafa;
+
+  &__nav {
+    margin-bottom: 30px;
+    @media (max-width: $md3 + px) {
+      display: none;
+    }
+  }
+
+  &__body {
+  }
+}

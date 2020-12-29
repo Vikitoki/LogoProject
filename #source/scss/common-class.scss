@@ -1033,3 +1033,239 @@
     }
   }
 }
+
+// Finally checkout form ===========================================
+
+.form {
+  &__body {
+    display: flex;
+    margin: 0 -22px;
+
+    @media (max-width: $md1 + px) {
+      flex-direction: column;
+    }
+  }
+
+  &__column {
+    flex: 0 1 50%;
+    padding: 0 22px;
+    @media (max-width: $md1 + px) {
+      flex: 1 1 100%;
+
+      margin-bottom: 40px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__items {
+    margin-bottom: 25px;
+  }
+
+  &__item {
+    margin-bottom: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+    @media (max-width: $md1 + px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__subscribe {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+
+    font-size: 12px;
+    font-weight: 300;
+    color: #666666;
+
+    position: relative;
+  }
+
+  &__condition {
+    font-size: 12px;
+    font-weight: 300;
+    color: #666666;
+    line-height: 18px;
+    p {
+      margin-bottom: 30px;
+
+      span {
+        color: #f68038;
+        display: inline-block;
+        margin-right: 5px;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.item-form {
+  font-size: 14px;
+  font-weight: 900;
+  color: #333333;
+
+  @media (max-width: $md4 + px) {
+    font-size: 12px;
+  }
+
+  &__label {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    &_area {
+      align-items: flex-start;
+      span {
+        padding-top: 5px;
+      }
+
+      @media (max-width: $md4 + px) {
+        flex-direction: column;
+      }
+    }
+
+    input {
+      flex: 0 0 220px;
+      padding: 10px;
+      height: 30px;
+
+      border: 1px solid #ccc9c9;
+      @media (max-width: $md1 + px) {
+        flex: 0 1 70%;
+      }
+
+      @media (max-width: $md4 + px) {
+        flex: 0 1 50%;
+      }
+    }
+
+    span {
+      padding-right: 10px;
+
+      @media (max-width: $md1 + px) {
+        flex: 0 1 30%;
+      }
+      @media (max-width: $md4 + px) {
+        flex: 0 1 50%;
+      }
+    }
+
+    textarea {
+      resize: none;
+
+      flex: 0 0 220px;
+      height: 121px;
+      padding: 10px;
+
+      border: 1px solid #ccc9c9;
+
+      @media (max-width: $md1 + px) {
+        flex: 0 1 70%;
+      }
+
+      @media (max-width: $md4 + px) {
+        min-width: 100%;
+        min-height: 150px;
+        flex: 1 1 100%;
+      }
+    }
+  }
+}
+
+.select-form {
+  flex: 0 0 220px;
+
+  font-size: 12px;
+  font-weight: 300;
+  color: #666666;
+
+  position: relative;
+
+  @media (max-width: $md1 + px) {
+    flex: 0 1 70%;
+  }
+  @media (max-width: $md4 + px) {
+    flex: 0 1 50%;
+  }
+
+  &__default {
+    display: flex;
+    align-items: center;
+    height: 30px;
+    padding: 10px 20px 10px 10px;
+
+    background-color: #fff;
+    border: 1px solid #ccc9c9;
+
+    cursor: pointer;
+
+    &::after {
+      content: "";
+
+      display: block;
+      width: 12px;
+      height: 8px;
+
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      z-index: 1;
+
+      background: url(../../images/FirstPage/add.icons/стрелка.svg) center
+        no-repeat;
+
+      transform: translateY(-50%);
+    }
+
+    &.active {
+      &::after {
+        top: 40%;
+        transform: rotate(180deg);
+      }
+    }
+  }
+
+  &__body {
+    display: none;
+    width: 100%;
+    padding: 10px 15px;
+
+    position: absolute;
+    top: 115%;
+    left: 0;
+    z-index: 1;
+
+    background-color: #fff;
+
+    border: 1px solid #ccc9c9;
+
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+
+    &.active {
+      display: block;
+    }
+  }
+
+  &__list {
+    li {
+      margin-bottom: 5px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__link {
+    color: inherit;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

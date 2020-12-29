@@ -388,6 +388,7 @@
 
   &__list {
     li {
+      display: inline-block;
       margin-bottom: 30px;
 
       &:last-child {
