@@ -136,7 +136,7 @@
 }
 
 .top-header {
-  background: url(../../images/FirstPage/header/background.jpg) center no-repeat;
+  background: url(../images/FirstPage/header/background.jpg) center no-repeat;
   background-size: cover;
   &__container {
     display: flex;
@@ -221,7 +221,7 @@
     &_phone {
       padding-left: 37px;
 
-      background: url(../../images/FirstPage/header/pnone-white.png) left top
+      background: url(../images/FirstPage/header/pnone-white.png) left top
         no-repeat;
       @media (max-width: $md2 + px) {
         padding: 0;

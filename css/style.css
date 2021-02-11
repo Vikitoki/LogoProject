@@ -4,7 +4,7 @@
 @font-face {
   font-family: "Uni Sans";
   src: url("../fonts/UniSansHeavyCAPS.eot");
-  src: local("../fonts/ Uni Sans Heavy CAPS"), local("UniSansHeavyCAPS"), url("../fonts/ UniSansHeavyCAPS.eot?#iefix") format("embedded-opentype"), url("../../fonts/UniSansHeavyCAPS.woff") format("woff"), url("../fonts/UniSansHeavyCAPS.ttf") format("truetype");
+  src: local("../fonts/ Uni Sans Heavy CAPS"), local("../fonts/UniSansHeavyCAPS"), url("../fonts/ UniSansHeavyCAPS.eot?#iefix") format("embedded-opentype"), url("../fonts/UniSansHeavyCAPS.woff") format("woff"), url("../fonts/UniSansHeavyCAPS.ttf") format("truetype");
   font-weight: 900;
   font-style: normal;
 }
@@ -257,7 +257,7 @@ h6 {
 }
 
 .top-header {
-  background: url(../../images/FirstPage/header/background.jpg) center no-repeat;
+  background: url(../images/FirstPage/header/background.jpg) center no-repeat;
   background-size: cover;
 }
 .top-header__container {
@@ -339,7 +339,7 @@ h6 {
 }
 .contacts-header__item_phone {
   padding-left: 37px;
-  background: url(../../images/FirstPage/header/pnone-white.png) left top no-repeat;
+  background: url(../images/FirstPage/header/pnone-white.png) left top no-repeat;
 }
 @media (max-width: 992.98px) {
   .contacts-header__item_phone {
@@ -397,7 +397,7 @@ h6 {
   align-items: center;
   padding-left: 36px;
   min-height: 24px;
-  background: url(../../images/FirstPage/header/icon-1.png) top left no-repeat;
+  background: url(../images/FirstPage/header/icon-1.png) top left no-repeat;
   font-size: 14px;
   font-weight: 300;
   color: #999999;
@@ -430,7 +430,7 @@ h6 {
   align-items: center;
   padding-left: 33px;
   min-height: 24px;
-  background: url(../../images/FirstPage/header/man-blue.png) top left no-repeat;
+  background: url(../images/FirstPage/header/man-blue.png) top left no-repeat;
   font-size: 14px;
   font-weight: 300;
   color: #1ab9ce;
@@ -467,7 +467,7 @@ h6 {
   align-items: center;
   padding-left: 35px;
   min-height: 24px;
-  background: url(../../images/FirstPage/header/icon-2.png) top 5px left no-repeat;
+  background: url(../images/FirstPage/header/icon-2.png) top 5px left no-repeat;
   font-size: 14px;
   font-weight: 300;
   color: #1ab9ce;
@@ -525,7 +525,7 @@ h6 {
   align-items: center;
   padding-left: 32px;
   min-height: 25px;
-  background: url(../../images/FirstPage/header/pnone-blue.png) top 5px left no-repeat;
+  background: url(../images/FirstPage/header/pnone-blue.png) top 5px left no-repeat;
   font-size: 14px;
   font-weight: 300;
   color: #1ab9ce;
@@ -560,7 +560,7 @@ h6 {
 .info-header__schedule {
   display: block;
   padding-left: 38px;
-  background: url(../../images/FirstPage/header/icon-3.png) top 2px left no-repeat;
+  background: url(../images/FirstPage/header/icon-3.png) top 2px left no-repeat;
   font-size: 12px;
   font-weight: 300;
   color: #999999;
@@ -670,7 +670,7 @@ h6 {
   position: relative;
 }
 .menu-intro__main {
-  background: url(../../images/FirstPage/intro/side-background.jpg) top left no-repeat;
+  background: url(../images/FirstPage/intro/side-background.jpg) top left no-repeat;
   background-size: cover;
 }
 .menu-intro__header {
@@ -701,7 +701,7 @@ h6 {
   display: block;
 }
 .menu-intro__link-parrent > a {
-  background: url(../../images/FirstPage/intro/parent-arrow.png) top 50% right 10px no-repeat;
+  background: url(../images/FirstPage/intro/parent-arrow.png) top 50% right 10px no-repeat;
   transition: background-color 0.2s linear;
 }
 .menu-intro__list li {
@@ -869,13 +869,13 @@ h6 {
   width: 10px;
   height: 10px;
   margin-left: 12px;
-  background: url(../../images/FirstPage/intro/search-arrow.png) center no-repeat;
+  background: url(../images/FirstPage/intro/search-arrow.png) center no-repeat;
 }
 .search-intro__select::before {
   width: 17px;
   height: 17px;
   margin-right: 13px;
-  background: url(../../images/FirstPage/intro/loop-icon.png) center no-repeat;
+  background: url(../images/FirstPage/intro/loop-icon.png) center no-repeat;
 }
 @media (max-width: 767.98px) {
   .search-intro__select {
@@ -1056,7 +1056,7 @@ h6 {
   text-transform: uppercase;
   border: 3px solid #fff;
   border-radius: 20px;
-  background: url(../../images/FirstPage/intro/more.png) top 50% right 14px no-repeat;
+  background: url(../images/FirstPage/intro/more.png) top 50% right 14px no-repeat;
   transition: background-color 0.2s linear, color 0.2s linear;
 }
 .item-content-intro__more a:hover {
@@ -1222,7 +1222,7 @@ h6 {
   display: inline-block;
   width: 11px;
   height: 11px;
-  background: url(../../images/FirstPage/about/arrow-list.png) left top no-repeat;
+  background: url(../images/FirstPage/about/arrow-list.png) left top no-repeat;
 }
 .blog__list li:last-child {
   margin-bottom: 0;
@@ -1508,7 +1508,7 @@ h6 {
   display: block;
   width: 19px;
   height: 25px;
-  background: url(../../images/FirstPage/footer/black-phone.png) center no-repeat;
+  background: url(../images/FirstPage/footer/black-phone.png) center no-repeat;
   position: absolute;
   top: 50%;
   left: 10px;
@@ -1645,7 +1645,7 @@ h6 {
 }
 .section-filter__title-spoiler.active::after {
   border-color: #cbcbcb;
-  background: url(../../images/FirstPage/add.icons/arrow_1.png) center no-repeat;
+  background: url(../images/FirstPage/add.icons/arrow_1.png) center no-repeat;
 }
 .section-filter__title-spoiler::after {
   content: "";
@@ -1656,7 +1656,7 @@ h6 {
   margin-left: 10px;
   border: 1px solid #72c9d4;
   border-radius: 50%;
-  background: url(../../images/FirstPage/add.icons/arrow_2.png) center no-repeat;
+  background: url(../images/FirstPage/add.icons/arrow_2.png) center no-repeat;
   transition: background 0.2s linear, border-color 0.2s linear;
 }
 .section-filter__title-spoiler:hover {
@@ -1840,7 +1840,7 @@ h6 {
   font-weight: 900;
   color: #ffffff;
   text-transform: uppercase;
-  background: url(../../images/FirstPage/add.icons/compare.png) 0 0 no-repeat;
+  background: url(../images/FirstPage/add.icons/compare.png) 0 0 no-repeat;
 }
 .compare-filter__delete {
   display: block;
@@ -2062,7 +2062,7 @@ h6 {
   display: block;
   height: 100%;
   padding: 10px 0 10px 30px;
-  background: url(../../images/FirstPage/product/compare-grey.png) top 5px left 0 no-repeat;
+  background: url(../images/FirstPage/product/compare-grey.png) top 5px left 0 no-repeat;
 }
 .top-product-description__compare:hover {
   background-color: #cfcfcf;
@@ -2164,7 +2164,7 @@ h6 {
   display: block;
   width: 57px;
   height: 57px;
-  background: url(../../images/FirstPage/product/cart-orange.png);
+  background: url(../images/FirstPage/product/cart-orange.png);
   border-radius: 50%;
 }
 .content-product-description__cart span {
@@ -2749,7 +2749,7 @@ h6 {
     display: block;
     width: 19px;
     height: 25px;
-    background: url(../../images/FirstPage/header/pnone-white.png) center no-repeat;
+    background: url(../images/FirstPage/header/pnone-white.png) center no-repeat;
   }
 }
 
@@ -3153,7 +3153,7 @@ h6 {
   margin-right: 10px;
   padding-right: 20px;
   white-space: nowrap;
-  background: url(../../images/FirstPage/add.icons/arrow-bread.png) right center no-repeat;
+  background: url(../images/FirstPage/add.icons/arrow-bread.png) right center no-repeat;
 }
 .breadcrumbs__list li:last-child {
   margin-right: 0;
@@ -3248,7 +3248,7 @@ h6 {
   display: block;
   width: 12px;
   height: 8px;
-  background: url(../../images/FirstPage/add.icons/arrow-open.png) right center no-repeat;
+  background: url(../images/FirstPage/add.icons/arrow-open.png) right center no-repeat;
   position: absolute;
   right: 10px;
 }
@@ -3617,7 +3617,7 @@ h6 {
   top: 50%;
   right: 10px;
   z-index: 1;
-  background: url(../../images/FirstPage/add.icons/стрелка.svg) center no-repeat;
+  background: url(../images/FirstPage/add.icons/стрелка.svg) center no-repeat;
   transform: translateY(-50%);
 }
 .select-form__default.active::after {
